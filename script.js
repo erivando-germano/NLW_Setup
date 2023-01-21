@@ -22,16 +22,6 @@ function save() {
   localStorage.setItem("NLWSetup@habits", JSON.stringify(nlwSetup.data))
 }
 
-var clearButton = document.getElementById("clear-button")
-clearButton.addEventListener("click", clearSelection)
-
-function clearSelection() {
-  var selectedElements = document.querySelectorAll(".habit.selected")
-  selectedElements.forEach(function (element) {
-    element.classList.remove("selected")
-  })
-}
-
 const data = JSON.parse(localStorage.getItem("NLWSetup@habits")) || {}
 nlwSetup.setData(data)
 nlwSetup.load()
